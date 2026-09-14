@@ -5,15 +5,28 @@ body {
   margin: 10px;
 }
 
+/* Oprava rozpadnutého rozvržení — vynutí zobrazení prvků pod sebou */
+center {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+table {
+  margin: 0 auto;
+}
+
 .blinking {
   animation: blinker 1s linear infinite;
   color: #FF0000;
   font-weight: bold;
 }
-
+/*nevyužité blikadlo, nechávám do budoucna*/
+/*
 @keyframes blinker {
   50% { opacity: 0; }
 }
+*/
 
 .retro-btn {
   background-color: #C0C0C0;

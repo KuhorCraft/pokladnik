@@ -1,6 +1,6 @@
+// Přímý odkaz na publikovanou tabulku (bez externí proxy)
 const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRgxqcHMwAtkXobgFNTggz-X0l-EwfshtsG9mYOWHv8aOEARnYpCwz8cvgdATDFU83or-q9q6wzgzEc/pub?output=csv';
 
-// Interval automatického obnovení v milisekundách (30000 ms = 30 sekund)
 const REFRESH_INTERVAL = 30000;
 
 let nactenaData = [];
@@ -32,8 +32,7 @@ function nactiData() {
     }
   });
 }
-
-// Funkce naplní roletky a zachová uživatelem vybranou hodnotu i při automatickém obnovení
+// Rapha <3 Lukas
 function naplnRoletkyVylepsene() {
   const selectAkce = document.getElementById('akce-select');
   const selectZaci = document.getElementById('zaci-select');
@@ -74,7 +73,6 @@ function vyhodnotDluzniky() {
   list.innerHTML = '';
   let pocetDluzniku = 0;
 
-  // 1. PŘÍPAD: Vybrán konkrétní žák
   if (valZak !== 'vse' && valZak !== '') {
     const vybranyZak = seznamZakum[valZak];
     const radekZaka = nactenaData.find(row => row[Object.keys(row)[0]]?.trim() === vybranyZak);
@@ -104,7 +102,6 @@ function vyhodnotDluzniky() {
       list.innerHTML = '<li><font color="#008000"><b>TENTO ŽÁK MÁ VŠECHNY AKCE ŘÁDNĚ UHRAZENY NEBO OMLOVENY!</b></font></li>';
     }
 
-  // 2. PŘÍPAD: Všichni žáci + konkrétní nebo všechny akce
   } else {
     if (valAkce === 'vse' || valAkce === '') {
       nadpis.textContent = 'SEZNAM ŽÁKŮ S JAKÝMKOLIV NEDOPLATKEM:';
@@ -218,11 +215,8 @@ function zobrazTabulku() {
         </tr>
       `;
     });
-  } // Rapha <3 Lukas
+  }
 }
 
-// První spuštění načtení dat
 nactiData();
-
-// Nastavení automatického obnovování dat každých 30 sekund
 setInterval(nactiData, REFRESH_INTERVAL);
