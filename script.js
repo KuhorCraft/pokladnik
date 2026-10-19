@@ -151,7 +151,7 @@ function vyhodnotDluzniky() {
     }
 
     if (pocetDluzniku === 0) {
-      list.innerHTML = '<li><font color="#008000"><b>VŠICHNI ŽÁCI MAJÍ VŠECHNO ŘÁDNĚ ZAPLACENO NEBO OMLOVENO! VÝBORNĚ! 🎉</b></font></li>';
+      list.innerHTML = '<li><font color="#008000"><b>CELÉ ŽACTVO VŠECHNO ŘÁDNĚ ZAPLACENO NEBO OMLOVENO.</b></font></li>';
     }
   }
 }
